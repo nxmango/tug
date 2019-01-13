@@ -1,14 +1,14 @@
 # This script depends on PyUSB. You can get it with pip install pyusb.
 # You will also need libusb installed
-
-# My sincere apologies for this process being overly complicated. Apparently Python and Windows
-# aren't very friendly :(
+#
 # Windows Instructions:
 # 1. Download Zadig from https://zadig.akeo.ie/.
-# 2. With your switch plugged in and on the Tinfoil USB install menu,
+# 2. With your Switch plugged in and on the Tinfoil USB install menu,
 #    choose "List All Devices" under the options menu in Zadig, and select libnx USB comms.
 # 3. Choose libusbK from the driver list and click the "Replace Driver" button.
-# 4. Run this script
+# 4. Go to Tinfoil > Title Management > USB Install NSP
+# 5. Run this script
+#      python usb_install_pc.py <path/to/nsp_folder>
 
 # macOS Instructions:
 # 1. Install Homebrew https://brew.sh
@@ -23,10 +23,7 @@
 # 5. Plug in your Switch and go to Tinfoil > Title Management > USB Install NSP
 # 6. Run this script
 #      python3 usb_install_pc.py <path/to/nsp_folder>
-"""""
-Original from Adubbz
-Slightly modified by nxmango
-"""""
+
 import struct
 
 CMD_ID_EXIT = 0
