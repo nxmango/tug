@@ -27,12 +27,25 @@ SOFTWARE.
 
 import os
 import sys
-import usb.core
-import usb.util
 from pathlib import Path
-from PyQt5 import QtWidgets, QtGui
+from tkinter import messagebox
 from usb_install_pc import send_nsp_list, poll_commands
-from PyQt5.QtWidgets import QFileDialog, QListWidget, QMessageBox
+import tkinter as tk
+root = tk.Tk()
+root.withdraw()
+try:
+    import usb.core
+    import usb.util
+except ImportError:
+    messagebox.showinfo("Error","PyUSB not found. Please install with 'pip3 install pyusb'\nIf you are on mac, also install LibUSB with 'brew install libusb'.")
+    exit()
+
+try:
+    from PyQt5 import QtWidgets, QtGui
+    from PyQt5.QtWidgets import QFileDialog, QListWidget, QMessageBox
+except ImportError:
+    messagebox.showinfo("Error","PyQt5 not found. Please install with 'pip3 install pyqt5'.")
+    exit()
 
 class TUG(QtWidgets.QWidget):
 
