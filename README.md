@@ -8,6 +8,8 @@ https://github.com/nxmango/tug/releases/latest
 
 ## Windows Instructions:
 1. Download & Install Python 3 from https://www.python.org/downloads/
+2. Install PyQt5
+      * pip install pyqt5
 2. Download Zadig from https://zadig.akeo.ie/.
 3. With your Switch plugged in and on the Tinfoil USB install menu,
    choose "List All Devices" under the options menu in Zadig, and select libnx USB comms.
