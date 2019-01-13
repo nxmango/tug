@@ -17,12 +17,12 @@ https://github.com/nxmango/tug/releases/latest
 ## macOS Instructions:
 1. Install Homebrew https://brew.sh
 2. Install Python 3
-      sudo mkdir /usr/local/Frameworks
-      sudo chown $(whoami) /usr/local/Frameworks
-      brew install python
+      * sudo mkdir /usr/local/Frameworks
+      * sudo chown $(whoami) /usr/local/Frameworks
+      * brew install python
 3. Install PyUSB
-      pip3 install pyusb
+      * pip3 install pyusb
 4. Install libusb
-      brew install libusb
+      * brew install libusb
 5. Plug in your Switch and go to Tinfoil > Title Management > USB Install NSP
 6. Double-click on tug.pyw
