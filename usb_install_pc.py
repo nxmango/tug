@@ -43,7 +43,6 @@ def poll_commands(nsp_dir, in_ep, out_ep):
 
         if magic != b'TUC0':  # Tinfoil USB Command 0
             continue
-        cmd_type = struct.unpack('<B', cmd_header[4:5])[0]
         cmd_id = struct.unpack('<I', cmd_header[8:12])[0]
         data_size = struct.unpack('<Q', cmd_header[12:20])[0]
 
