@@ -23,9 +23,11 @@ https://github.com/nxmango/tug/releases/latest
       * sudo mkdir /usr/local/Frameworks
       * sudo chown $(whoami) /usr/local/Frameworks
       * brew install python
-3. Install PyUSB
+3. Install PyQt5
+      * pip3 install pyqt5
+4. Install PyUSB
       * pip3 install pyusb
-4. Install libusb
+5. Install libusb
       * brew install libusb
-5. Plug in your Switch and go to Tinfoil > Title Management > USB Install NSP
-6. Double-click on tug.pyw
+6. Plug in your Switch and go to Tinfoil > Title Management > USB Install NSP
+7. Double-click on tug.pyw
