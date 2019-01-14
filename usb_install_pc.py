@@ -1,6 +1,11 @@
 # Slightly modified by nxmango from https://github.com/Adubbz/Tinfoil/blob/master/tools/usb_install_pc.py
 
 import struct
+import config
+
+def set_progress(c, e):
+    config.cur_prog = c
+    config.end_prog = e
 
 CMD_ID_EXIT = 0
 CMD_ID_FILE_RANGE = 1
@@ -32,9 +37,17 @@ def file_range_cmd(nsp_dir, in_ep, out_ep, data_size):
         while curr_off < end_off:
             if curr_off + read_size >= end_off:
                 read_size = end_off - curr_off
+                try:
+                    set_progress(int(end_off), int(end_off))
+                except:
+                    pass
             buf = f.read(read_size)
             out_ep.write(data=buf, timeout=0)
             curr_off += read_size
+            try:
+                set_progress(int(curr_off), int(end_off))
+            except:
+                pass
 
 def poll_commands(nsp_dir, in_ep, out_ep):
     while True:
